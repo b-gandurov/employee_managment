@@ -25,10 +25,14 @@ The setup has the following features:
 - Add an employee: User can add new employees with details like name, contact information, department and role.
   <img src="add.gif" alt="add empl" width="277"/>
 - View an employee: User can view the details of an employee by entering the employee's name.
+- <img src="view.gif" alt="view empl" width="277"/>
 - Update an employee: User can update the details of an existing employee.
+- <img src="update.gif" alt="update empl" width="277"/>
 - Delete an employee: User can delete an employee from the system.
+- <img src="delete.gif" alt="delete empl" width="277"/>
 - Generate a report: User can generate a report listing all employees.
 - Add a department: User can add a new department.
+- <img src="dep.gif" alt="dep" width="277"/>
 
 ## Built With
 
