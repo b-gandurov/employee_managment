@@ -8,7 +8,10 @@ This project is an employee management system implemented using Python and SQLit
 
 You need Python 3.x and some extra packages installed on your machine. To install the necessary packages, run the following command in your terminal:
 
+```bash
 pip install -r requirements.txt
+```
+
 
 ### Usage
 
