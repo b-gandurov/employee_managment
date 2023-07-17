@@ -23,7 +23,7 @@ A new window will pop up. You can then interact with the database using the GUI.
 The setup has the following features:
 
 - Add an employee: User can add new employees with details like name, contact information, department and role.
-<img src="add.gif" alt="add empl" width="277"/>
+<img src="md_assets/add.gif" alt="add empl" width="277"/>
 - View an employee: User can view the details of an employee by entering the employee's name.
 <img src="view.gif" alt="view empl" width="277"/>
 - Update an employee: User can update the details of an existing employee.
