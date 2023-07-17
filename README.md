@@ -8,8 +8,6 @@ This project is an employee management system implemented using Python and SQLit
 
 You need Python 3.x 
 
-### Usage
-
 Clone the repository to your local machine and navigate to the project directory.
 
 ```bash
