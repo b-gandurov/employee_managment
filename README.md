@@ -23,7 +23,9 @@ git clone https://github.com/b-gandurov/employee_management_system.git
 
 Run the main python script from the command line:
 
+```bash
 python main.py
+```
 
 A new window will pop up. You can then interact with the database using the GUI.
 
