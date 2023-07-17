@@ -6,20 +6,20 @@ from crud_operations import add_employee, get_employee, update_employee, delete_
 def handle_add():
     name = name_entry.get()
     contact = contact_entry.get()
-    department_id = departments[department_var.get()]
-    role_id = roles[role_var.get()]
-
     try:
-        department_id = int(department_id)
-        role_id = int(role_id)
-    except ValueError:
-        messagebox.showerror("Invalid Input", "Department ID and Role ID must be integers")
+        department = departments[department_var.get()]
+        role = roles[role_var.get()]
+    except KeyError:
+        messagebox.showerror("Invalid Input", "Department and Role must be selected")
         return
 
-    add_employee(name, contact, department_id, role_id)
-    name_entry.delete(0, tk.END)
-    contact_entry.delete(0, tk.END)
-    messagebox.showinfo("Success", f"Employee {name} added successfully!")
+    if all([name,contact]):
+        add_employee(name, contact, department, role)
+        name_entry.delete(0, tk.END)
+        contact_entry.delete(0, tk.END)
+        messagebox.showinfo("Success", f"Employee {name} added successfully!")
+    else:
+        messagebox.showerror("Error", "All fields must be filled")
 
 def handle_view():
     name = name_entry.get()
@@ -76,17 +76,26 @@ def handle_add_department():
     name = department_name_entry.get()
     if name:
         add_department(name)
+        update_department_dropdown()
         messagebox.showinfo("Success", "Department added successfully")
-        start_gui()
     else:
         messagebox.showerror('Error', "Please fill the field")
+
+def update_department_dropdown():
+    departments_db = get_departments()
+    departments = {name: id for id, name in departments_db}
+    department_var.set(list(departments.keys())[0])
+    department_dropdown["menu"].delete(0, "end")
+    for department in departments.keys():
+        department_dropdown["menu"].add_command(label=department, command=tk._setit(department_var, department))
+
 
 # UI Component Definitions
 base = tk.Tk()
 conn = get_conn()
 departments_db = get_departments()
 departments = {name: id for id, name in departments_db}
-department_var = tk.StringVar(base)
+department_var = tk.StringVar()
 
 if departments:
     department_dropdown = tk.OptionMenu(base, department_var, *departments.keys())
@@ -149,6 +158,5 @@ role_dropdown.grid(row=4, column=1)
 
 def start_gui():
     base.mainloop()
-
 
 
