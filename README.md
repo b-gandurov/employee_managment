@@ -17,7 +17,9 @@ pip install -r requirements.txt
 
 Clone the repository to your local machine and navigate to the project directory.
 
+```bash
 git clone https://github.com/b-gandurov/employee_management_system.git
+```
 
 Run the main python script from the command line:
 
